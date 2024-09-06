@@ -30,6 +30,7 @@
     "android",
     "ios",
     "lib",
-    "react-native-audio-speaker.podspec"
+    "react-native-audio-speaker.podspec",
+    "react-native.config.js"
   ]
 }
