@@ -2,8 +2,8 @@
   "name": "react-native-audio-speaker",
   "version": "1.0.0",
   "description": "",
-  "main": "index.ts",
-  "types": "index.d.ts",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "prepare": "npm run build",
     "build": "tsc"
@@ -20,7 +20,6 @@
     "react-native": ">=0.60.0"
   },
   "devDependencies": {
-    "@types/react-native": "^0.67.0",
     "typescript": "^4.5.5"
   }
 }
