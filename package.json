@@ -2,11 +2,25 @@
   "name": "react-native-audio-speaker",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.ts",
+  "types": "index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepare": "npm run build",
+    "build": "tsc"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "keywords": [
+    "react-native",
+    "ios",
+    "audio",
+    "speaker"
+  ],
+  "author": "Minh Toan",
+  "license": "MIT",
+  "peerDependencies": {
+    "react-native": ">=0.60.0"
+  },
+  "devDependencies": {
+    "@types/react-native": "^0.67.0",
+    "typescript": "^4.5.5"
+  }
 }
