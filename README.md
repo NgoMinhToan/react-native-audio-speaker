@@ -32,17 +32,17 @@ No additional steps required for Android.
 ## Usage
 
 ```javascript
-import RNAudioSpeaker from 'react-native-audio-speaker';
+import AudioSpeaker from 'react-native-audio-speaker';
 // Toggle speaker
-RNAudioSpeaker.toggleSpeaker();
+AudioSpeaker.toggleSpeaker();
 // Check if speaker is on
-RNAudioSpeaker.isSpeaker().then((isSpeakerOn) => {
+AudioSpeaker.isSpeaker().then((isSpeakerOn) => {
 console.log('Speaker is on:', isSpeakerOn);
 });
 // Switch to speaker
-RNAudioSpeaker.switchToSpeaker();
+AudioSpeaker.switchToSpeaker();
 // Switch to receiver
-RNAudioSpeaker.switchToReceiver();
+AudioSpeaker.switchToReceiver();
 
 ```
 

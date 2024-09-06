@@ -3,10 +3,10 @@ module.exports = {
         "react-native-audio-speaker": {
             platforms: {
                 ios: {
-                    podspecPath: '../node_modules/react-native-audio-speaker/react-native-audio-speaker.podspec',
+                    podspecPath: path.join(__dirname, 'react-native-audio-speaker.podspec'),
                 },
                 android: {
-                    sourceDir: '../node_modules/react-native-audio-speaker/android',
+                    sourceDir: path.join(__dirname, 'android'),
                 },
             },
         }
