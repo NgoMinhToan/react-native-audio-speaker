@@ -21,5 +21,15 @@
   },
   "devDependencies": {
     "typescript": "^4.5.5"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NgoMinhToan/react-native-audio-speaker.git"
+  },
+  "files": [
+    "android",
+    "ios",
+    "lib",
+    "react-native-audio-speaker.podspec"
+  ]
 }
