@@ -1,6 +1,6 @@
 {
   "name": "react-native-audio-speaker",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "A React Native module to toggle speaker/phone speaker for iOS and Android",
   "main": "lib/index.js",
   "nativePackage": true,
