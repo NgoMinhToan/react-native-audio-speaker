@@ -11,6 +11,6 @@
     "skipLibCheck": true,
     "lib": ["es6"]
   },
-  "include": ["index.ts"],
+  "include": ["src/index.tsx"],
   "exclude": ["node_modules", "**/__tests__/*", "lib"]
 }

@@ -1,15 +1,8 @@
-//
-//  RNAudioSpeakerModule.m
-//
-//  Created by Ngo Minh Toan on 16/04/2024.
-//
-
-#import "RNAudioSpeakerModule.h"
+#import "AudioSpeaker.h"
 #import <AVFoundation/AVFoundation.h>
 
-@implementation RNAudioSpeakerModule
-
-RCT_EXPORT_MODULE(RNAudioSpeaker);
+@implementation AudioSpeaker
+RCT_EXPORT_MODULE(RNAudioSpeaker)
 
 RCT_EXPORT_METHOD(switchToSpeaker) {
     AVAudioSession *audioSession = [AVAudioSession sharedInstance];
@@ -52,5 +45,6 @@ RCT_EXPORT_METHOD(toggleSpeaker) {
         [self switchToSpeaker];
     }
 }
+
 
 @end
