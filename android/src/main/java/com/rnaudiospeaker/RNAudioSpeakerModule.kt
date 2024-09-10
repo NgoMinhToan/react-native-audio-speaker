@@ -16,7 +16,7 @@ class RNAudioSpeakerModule(reactContext: ReactApplicationContext) :
     }
 
     override fun getName(): String {
-        return "RNAudioSpeakerModule"
+        return "RNAudioSpeaker"
     }
 
     @ReactMethod

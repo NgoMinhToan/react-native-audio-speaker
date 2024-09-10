@@ -1,17 +1,44 @@
+buildscript {
+    ext.kotlin_version = '1.5.0'  // Use the latest stable version
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.2.2'  // Use appropriate version
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
+    compileSdkVersion getExtOrIntegerDefault('compileSdkVersion')
+    buildToolsVersion getExtOrDefault('buildToolsVersion')
 
     defaultConfig {
-        minSdkVersion rootProject.ext.minSdkVersion
-        targetSdkVersion rootProject.ext.targetSdkVersion
+        minSdkVersion getExtOrIntegerDefault('minSdkVersion')
+        targetSdkVersion getExtOrIntegerDefault('targetSdkVersion')
     }
+
+    // Remove the sourceSets block since Kotlin files are in the java directory
+}
+
+repositories {
+    mavenCentral()
+    google()
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
-    implementation 'com.facebook.react:react-native:+'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation "com.facebook.react:react-native:+"
+}
+
+def getExtOrDefault(prop) {
+    return rootProject.ext.has(prop) ? rootProject.ext.get(prop) : project.properties['android.' + prop]
+}
+
+def getExtOrIntegerDefault(prop) {
+    return rootProject.ext.has(prop) ? rootProject.ext.get(prop) : (project.properties['android.' + prop]).toInteger()
 }

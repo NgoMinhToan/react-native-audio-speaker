@@ -1,9 +1,9 @@
 {
   "name": "react-native-audio-speaker",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.11",
+  "description": "A React Native module to toggle speaker/phone speaker for iOS and Android",
   "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "nativePackage": true,
   "scripts": {
     "prepare": "npm run build",
     "build": "tsc"
@@ -15,6 +15,7 @@
     "speaker"
   ],
   "author": "Minh Toan",
+  "homepage": "https://github.com/NgoMinhToan/react-native-audio-speaker",
   "license": "MIT",
   "peerDependencies": {
     "react-native": ">=0.60.0"
@@ -25,12 +26,5 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/NgoMinhToan/react-native-audio-speaker.git"
-  },
-  "files": [
-    "android",
-    "ios",
-    "lib",
-    "react-native-audio-speaker.podspec",
-    "react-native.config.js"
-  ]
+  }
 }
