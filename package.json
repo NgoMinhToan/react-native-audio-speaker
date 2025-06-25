@@ -25,7 +25,8 @@
   ],
   "scripts": {
     "prepare": "npm run build",
-    "build": "tsc"
+    "build": "tsc",
+    "test": "echo 'No tests yet' && true"
   },
   "keywords": [
     "react-native",
