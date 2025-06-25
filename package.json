@@ -53,7 +53,7 @@
     "url": "https://github.com/NgoMinhToan/react-native-audio-speaker.git"
   },
   "codegenConfig": {
-    "name": "AudioSpeaker",
+    "name": "RNAudioSpeaker",
     "type": "modules",
     "jsSrcsDir": "./src",
     "android": {

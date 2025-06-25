@@ -6,7 +6,7 @@
 //
 
 #ifdef RCT_NEW_ARCH_ENABLED
-#import "RNAudioSpeakerSpec.h"
+#import "RNAudioSpeaker.h"
 
 @interface AudioSpeaker : NSObject <NativeAudioSpeakerSpec>
 #else

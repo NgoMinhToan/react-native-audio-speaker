@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
   s.platforms    = { :ios => ios_platform }
   s.source       = { :git => package["repository"]["url"], :tag => "#{s.version}" }
 
-  s.source_files = "ios/**/*.{h,m,mm}"
+  s.source_files = "ios/**/*.{h,m,mm,cpp}"
 
   # Use install_modules_dependencies helper to install the dependencies if React Native version >=0.71.0.
   # See https://github.com/facebook/react-native/blob/febf6b7f33fdb4904669f99d795eba4c0f95d7bf/scripts/cocoapods/new_architecture.rb#L79.
@@ -34,11 +34,29 @@ Pod::Spec.new do |s|
           "OTHER_CPLUSPLUSFLAGS" => "-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1",
           "CLANG_CXX_LANGUAGE_STANDARD" => "c++17"
       }
+      s.preserve_paths = "build/generated/**/*"
+      s.source_files   += "build/generated/ios/**/*.{h,m,mm,cpp}"
       s.dependency "React-Codegen"
       s.dependency "RCT-Folly"
       s.dependency "RCTRequired"
       s.dependency "RCTTypeSafety"
       s.dependency "ReactCommon/turbomodule/core"
+      s.script_phase = {
+        :name => 'Generate Specs',
+        :input_files => ['${PODS_TARGET_SRCROOT}/package.json'],
+        :output_files => ['${PODS_TARGET_SRCROOT}/build/generated/ios/RNAudioSpeaker.h'],
+        :shell_path => '/bin/sh',
+        :script => <<-SCRIPT
+          set -e
+          export RCT_NEW_ARCH_ENABLED=1
+          export NODE_BINARY=$(which node)
+          cd "${PODS_TARGET_SRCROOT}"
+          $NODE_BINARY ../node_modules/react-native/scripts/generate-specs-cli.js \
+            --platform ios \
+            --outputDir build/generated \
+            --config package.json
+        SCRIPT
+      }
     end
   end
 end

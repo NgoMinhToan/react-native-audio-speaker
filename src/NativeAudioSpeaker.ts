@@ -9,4 +9,4 @@ export interface Spec extends TurboModule {
     switchToSpeaker(): void;
 }
 
-export default TurboModuleRegistry.getEnforcing<Spec>('AudioSpeaker');
+export default TurboModuleRegistry.getEnforcing<Spec>('RNAudioSpeaker');
