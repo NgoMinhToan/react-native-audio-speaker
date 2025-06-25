@@ -1,5 +1,18 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.rnaudiospeaker">
+          package="com.rnaudiospeaker"
+          xmlns:tools="http://schemas.android.com/tools">
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
 
+    <application>
+        <!-- đây là nơi khai báo service của bạn -->
+        <service
+            android:name=".MyConnectionService"
+            android:exported="true"
+            android:permission="android.permission.BIND_TELECOM_CONNECTION_SERVICE"
+            tools:ignore="ProtectedPermissions">
+            <intent-filter>
+                <action android:name="android.telecom.ConnectionService"/>
+            </intent-filter>
+        </service>
+    </application>
 </manifest>
